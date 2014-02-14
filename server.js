@@ -15,10 +15,11 @@ app.get('/resize',function(req,res){
 	if(req.query.url){
 		var w = (req.query.w)?req.query.w:100;
 		var h= (req.query.h)?req.query.h:100;
+		var q = (req.query.q)?req.query.q:50;
 		
 		gm(request(req.query.url))
 			.resize(w, h)
-			.quality(100)
+			.quality(q)
 			.stream(function(err, stdout, stderr) {
 				if(stdout){
 					var buf = new Buffer('');
