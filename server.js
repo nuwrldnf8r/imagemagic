@@ -18,6 +18,7 @@ app.get('/resize',function(req,res){
 		
 		gm(request(req.query.url))
 			.resize(w, h)
+			.quality(100)
 			.stream(function(err, stdout, stderr) {
 				if(stdout){
 					var buf = new Buffer('');
