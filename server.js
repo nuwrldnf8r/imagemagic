@@ -13,9 +13,9 @@ app.get('/ping',function(req,res){
 app.get('/resize',function(req,res){
 	
 	if(req.query.url){
-		var w = (req.query.w)?req.query.w:100;
-		var h= (req.query.h)?req.query.h:100;
-		var q = (req.query.q)?req.query.q:50;
+		var w = (req.query.w)?req.query.w:100;  //width
+		var h= (req.query.h)?req.query.h:100;  //height
+		var q = (req.query.q)?req.query.q:50;  //quality
 		
 		gm(request(req.query.url))
 			.resize(w, h)
